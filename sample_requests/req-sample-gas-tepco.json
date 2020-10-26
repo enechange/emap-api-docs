@@ -1,0 +1,46 @@
+{
+  "request_id": "E00001",
+  "postcode": "1000004",
+  "fee_plan_code": "ozkxj|hzozmtmvoztgdbcodibtw-ozkxj",
+  "contract_ampere": 40,
+  "base_YYYYmm": "202010",
+  "fee_history": [
+    "8000",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "usage_history": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "weekday_night_usage_percentage": 25,
+  "holiday_night_usage_percentage": null,
+  "floor_space": 45,
+  "number_of_rooms": 2,
+  "number_of_family": 3,
+  "all_electric": false,
+  "fee_plan_codes": [
+    "ozkxj|hzozmtmvoztgdbcodibtw-ozkxj",
+    "nvhkgzvbvn|hzozmtmvoztgdbcodibtw-ozkxj",
+    "nvhkgzvbvn|hzozmtmvoztgdbcodibtwtb-ozkxj"
+  ]
+}
