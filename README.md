@@ -5,7 +5,7 @@
   - /elec/providers : 電気事業者一覧を取得できます。
   - /elec/plans : 低圧の電気料金プランを提供・公開している事業者およびプランを取得できます。
   - /elec/fuel_cost_adjustments : 燃料費調整額を取得できます。
-  - /elec/renewable_energy_surcharges : 燃料費調整額を取得できます。
+  - /elec/renewable_energy_surcharges : 再生可能エネルギー発電促進賦課金を取得できます。
 - APIの仕様の詳細については[こちら](https://emap-sim-base.enechange.jp/apidocs/plan)をご覧ください。
 
 ### 実行例
@@ -143,4 +143,4 @@ cat emap_simulation.json | jq
 | | | 低圧電力
 
 ### 取得期間（燃料費調整額、再生可能エネルギー賦課金）
- - デモ環境では、燃料費調整額と再生可能エネルギーに関しては、現在の年を含んで過去３年分のみレスポンスを返します。
+ - デモ環境では、燃料費調整額と再生可能エネルギー発電促進賦課金に関しては、現在の年を含んで過去３年分のみレスポンスを返します。
