@@ -31,7 +31,7 @@ cat emap_plans.json | jq
 ```sh
 # curlの場合
 curl -X POST -H "Content-Type: application/json" -H "X-EMAP-USER-KEY:emapapidemouser1234" -d @req-sample-gas-tepco.json https://emap-sim-base.enechange.jp/v001/elec/simulate > emap_simulation.json
-curl -X POST -H "Content-Type: application/json" -H "X-EMAP-USER-KEY:emapapidemouser1234" -d '{"request_id":"E00001","postcode":"1000004","fee_plan_code":"ozkxj|hzozmtmvoztgdbcodibtw-ozkxj","contract_ampere":40,"base_YYYYmm":"202010","fee_history":["8000","","","","","","","","","","",""],"usage_history":["","","","","","","","","","","",""],"weekday_night_usage_percentage":25,"all_electric":false,"fee_plan_codes":["ozkxj|hzozmtmvoztgdbcodibtw-ozkxj","nvhkgzvbvn|hzozmtmvoztgdbcodibtw-ozkxj","nvhkgzvbvn|hzozmtmvoztgdbcodibtwtb-ozkxj"]}' https://emap-sim-base.enechange.jp/v001/elec/simulate > emap_simulation.json
+curl -X POST -H "Content-Type: application/json" -H "X-EMAP-USER-KEY:emapapidemouser1234" -d '{"request_id":"E00001","postcode":"1000004","fee_plan_code":"ozkxj|hzozmtmvoztgdbcodibtw-ozkxj","contract_ampere":40,"unit_type":1,"base_YYYYmm":"202010","fee_history":["8000","","","","","","","","","","",""],"usage_history":["","","","","","","","","","","",""],"weekday_night_usage_percentage":25,"all_electric":false,"fee_plan_codes":["ozkxj|hzozmtmvoztgdbcodibtw-ozkxj","nvhkgzvbvn|hzozmtmvoztgdbcodibtw-ozkxj","nvhkgzvbvn|hzozmtmvoztgdbcodibtwtb-ozkxj"]}' https://emap-sim-base.enechange.jp/v001/elec/simulate > emap_simulation.json
 
 # wgetの場合
 wget -q -O emap_simulation.json https://emap-sim-base.enechange.jp/v001/elec/simulate --post-file req-sample-gas-tepco.json --header='X-EMAP-USER-KEY:emapapidemouser1234' --header 'Content-Type: application/json' --header 'Accept: application/json'
