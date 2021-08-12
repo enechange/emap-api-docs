@@ -68,79 +68,81 @@ cat emap_simulation.json | jq
  - デモ環境で取得できる単価は最新の値に追従していない場合があります。
  - サンプルガスはデモ用に用意した事業者になります。取得できる単価は仮想の値となります。
 
-| エリア名 | 事業者名 | プラン名 |
-|:-------- |:-------- |:-------- |
-| 北海道電力エリア | 北海道電力 | 従量電灯B |
-| | | 従量電灯C |
-| | | eタイム3プラス |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯B |
-| | | 従量電灯B（ガス割）|
-| | | 従量電灯C |
-| | | 従量電灯C（ガス割）|
-| | | 低圧電力 |
-| 東北電力エリア | 東北電力 | 従量電灯B |
-| | | 従量電灯C |
-| | | よりそう＋ナイト8 |
-| | | よりそう＋ナイト8(実量契約) |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯B |
-| | | 従量電灯C |
-| | | お家ぷらん |
-| | | 低圧電力 |
-| 東京電力エリア | 東京電力エナジーパートナー | 従量電灯B |
-| | | 従量電灯C |
-| | | スマートライフS |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯B |
-| | | 従量電灯B（ガス割） |
-| | | 従量電灯C |
-| | | 従量電灯C（ガス割） |
-| | | 低圧電力 |
-| 中部電力エリア | 中部電力ミライズ | 従量電灯B |
-| | | 従量電灯C |
-| | | スマートライフプラン |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯B |
-| | | 従量電灯C |
-| | | 低圧電力 |
-| 北陸電力エリア | 北陸電力 | 従量電灯B |
-| | | 従量電灯C |
-| | | くつろぎナイト12 |
-| | | 低圧電力 |
-| 関西電力エリア | 関西電力 | 従量電灯A |
-| | | 従量電灯B |
-| | | はぴeタイムR |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯A |
-| | | 従量電灯A（ガス割） |
-| | | 従量電灯B |
-| | | 従量電灯B（ガス割） |
-| | | 低圧電力 |
-| 中国電力エリア | 中国電力 | 従量電灯A |
-| | | 従量電灯B |
-| | | ぐっとずっと。プラン 電化Styleコース |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯A |
-| | | 従量電灯B |
-| | | 低圧電力 |
-| 四国電力エリア | 四国電力 | 従量電灯A |
-| | | 従量電灯B |
-| | | でんかeプラン |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯A |
-| | | 従量電灯B |
-| | | 低圧電力 |
-| 九州電力エリア | 九州電力 | 従量電灯B |
-| | | 従量電灯C |
-| | | 電化でナイト・セレクト22 |
-| | | 低圧電力 |
-| | サンプルガス | 従量電灯B |
-| | | 従量電灯C |
-| | | 低圧電力 |
-| 沖縄電力エリア | 沖縄電力 | 従量電灯 |
-| | | Ee ホームホリデー |
-| | | 低圧電力
+| エリア名 | 事業者名 | プラン名 | fee_plan_code(※) |
+|:-------- |:-------- |:-------- |:-------- |
+| 北海道電力エリア | 北海道電力 | 従量電灯B | czkxj&#x7C;hzozmtmvoztgdbcodibtw-czkxj |
+| | | 従量電灯C | czkxj&#x7C;hzozmtmvoztgdbcodibtx-czkxj |
+| | | eタイム3プラス | czkxj&#x7C;zodhztbtkgpn-czkxj |
+| | | 低圧電力 | czkxj&#x7C;gjrtqjgovbz-czkxj |
+| | サンプルガス | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtw-czkxj |
+| | | 従量電灯B（ガス割）| nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtwtb-czkxj |
+| | | 従量電灯C | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtx-czkxj |
+| | | 従量電灯C（ガス割）| nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtxtb-czkxj |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-czkxj |
+| 東北電力エリア | 東北電力 | 従量電灯B | ojcjfpvzkxj&#x7C;hzozmtmvoztgdbcodibtw-ojcjfpvzkxj |
+| | | 従量電灯C | ojcjfpvzkxj&#x7C;hzozmtmvoztgdbcodibtx-ojcjfpvzkxj |
+| | | よりそう＋ナイト8（kVA契約） | ojcjfpvzkxj&#x7C;tjmdnjptidbcotg-ojcjfpvzkxj |
+| | | よりそう＋ナイト8（実量契約）| ojcjfpvzkxj&#x7C;tjmdnjptidbcotgtedonpmtjp-ojcjfpvzkxj |
+| | | 低圧電力 | ojcjfpvzkxj&#x7C;gjrtqjgovbz-ojcjfpvzkxj |
+| | サンプルガス | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtw-ojcjfpvzkxj |
+| | | 従量電灯C | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtx-ojcjfpvzkxj |
+| | | お家ぷらん | nvhkgzvbvn&#x7C;cjhztkgvi-ojcjfpvzkxj |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-ojcjfpvzkxj |
+| 東京電力エリア | 東京電力エナジーパートナー | 従量電灯B | ozkxj&#x7C;hzozmtmvoztgdbcodibtw-ozkxj |
+| | | 従量電灯C | ozkxj&#x7C;hzozmtmvoztgdbcodibtx-ozkxj |
+| | | スマートライフS | ozkxj&#x7C;nhvmotgdaztn-ozkxj |
+| | | 低圧電力 | ozkxj&#x7C;gjrtqjgovbz-ozkxj |
+| | サンプルガス | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtw-ozkxj |
+| | | 従量電灯B（ガス割） | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtwtb-ozkxj |
+| | | 従量電灯C | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtx-ozkxj |
+| | | 従量電灯C（ガス割） | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtxtb-ozkxj |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-ozkxj |
+| 中部電力エリア | 中部電力ミライズ | 従量電灯B | xcpyzi&#x7C;hzozmtmvoztgdbcodibtw-xcpyzi |
+| | | 従量電灯C | xcpyzi&#x7C;hzozmtmvoztgdbcodibtx-xcpyzi |
+| | | スマートライフプラン | xcpyzi&#x7C;nhvmotgdaz-xcpyzi |
+| | | 低圧電力 | xcpyzi&#x7C;gjrtqjgovbz-xcpyzi |
+| | サンプルガス | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtw-xcpyzi |
+| | | 従量電灯C | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtx-xcpyzi |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-xcpyzi |
+| 北陸電力エリア | 北陸電力 | 従量電灯B | mdfpyzi&#x7C;hzozmtmvoztgdbcodibtw-mdfpyzi |
+| | | 従量電灯C | mdfpyzi&#x7C;hzozmtmvoztgdbcodibtx-mdfpyzi |
+| | | くつろぎナイト12 | mdfpyzi&#x7C;fponpmjbdtza-mdfpyzi |
+| | | 低圧電力 | mdfpyzi&#x7C;gjrtqjgovbz-mdfpyzi |
+| 関西電力エリア | 関西電力 | 従量電灯A | fzkxj&#x7C;hzozmtmvoztgdbcodibtv-fzkxj |
+| | | 従量電灯B | fzkxj&#x7C;hzozmtmvoztgdbcodibtw-fzkxj |
+| | | はぴeタイムR | fzkxj&#x7C;cvkdtztodhztmtedonpmtjp-fzkxj |
+| | | 低圧電力 | fzkxj&#x7C;gjrtqjgovbz-fzkxj |
+| | サンプルガス | 従量電灯A | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtv-fzkxj |
+| | | 従量電灯A（ガス割） | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtvtb-fzkxj |
+| | | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtwtf-fzkxj |
+| | | 従量電灯B（ガス割） | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtwtftb-fzkxj |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-fzkxj |
+| 中国電力エリア | 中国電力 | 従量電灯A | zizmbdv&#x7C;hzozmtmvoztgdbcodibtv-zizmbdv |
+| | | 従量電灯B | zizmbdv&#x7C;hzozmtmvoztgdbcodibtw-zizmbdv |
+| | | ぐっとずっと。プラン 電化Styleコース | zizmbdv&#x7C;yzifv-zizmbdv |
+| | | 低圧電力 | zizmbdv&#x7C;gjrtqjgovbz-zizmbdv |
+| | サンプルガス | 従量電灯A | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtv-zizmbdv |
+| | | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtwtf-zizmbdv |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-zizmbdv |
+| 四国電力エリア | 四国電力 | 従量電灯A | tjiyzi&#x7C;hzozmtmvoztgdbcodibtv-tjiyzi |
+| | | 従量電灯B | tjiyzi&#x7C;hzozmtmvoztgdbcodibtw-tjiyzi |
+| | | でんかeプラン | tjiyzi&#x7C;yzifvtz-tjiyzi |
+| | | 低圧電力 | tjiyzi&#x7C;gjrtqjgovbz-tjiyzi |
+| | サンプルガス | 従量電灯A | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtv-tjiyzi |
+| | | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtwtf-tjiyzi |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-tjiyzi |
+| 九州電力エリア | 九州電力 | 従量電灯B | ftpyzi&#x7C;hzozmtmvoztgdbcodibtw-ftpyzi |
+| | | 従量電灯C | ftpyzi&#x7C;hzozmtmvoztgdbcodibtx-ftpyzi |
+| | | 電化でナイト・セレクト22 | ftpyzi&#x7C;yzifvtyztidbcotnzgzxo-ftpyzi |
+| | | 低圧電力 | ftpyzi&#x7C;gjrtqjgovbz-ftpyzi |
+| | サンプルガス | 従量電灯B | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtw-ftpyzi |
+| | | 従量電灯C | nvhkgzvbvn&#x7C;hzozmtmvoztgdbcodibtx-ftpyzi |
+| | | 低圧電力 | nvhkgzvbvn&#x7C;gjrtqjgovbz-ftpyzi |
+| 沖縄電力エリア | 沖縄電力 | 従量電灯 | jfdyzi&#x7C;hzozmtmvoztgdbcodib-jfdyzi |
+| | | Ee ホームホリデー | jfdyzi&#x7C;zzcjhztcjgdyvt-jfdyzi |
+| | | 低圧電力 | jfdyzi&#x7C;gjrtqjgovbz-jfdyzi |
 
-### 取得期間（燃料費調整額、再生可能エネルギー賦課金）
+※Simulation API 利用時に必要な値となります。Plan APIでは必要ありません。
+
+#:## 取得期間（燃料費調整額、再生可能エネルギー賦課金）
  - デモ環境では、燃料費調整額と再生可能エネルギー発電促進賦課金に関しては、現在の年を含んで過去３年分のみレスポンスを返します。
