@@ -1,0 +1,43 @@
+{
+  "request_id": "H14640da",
+  "postcode": "1000001",
+  "current_plan_code": "czkxj|hzozmtmvoztgdbcodibtw-czkxj",
+  "target_plan_codes": [
+    "czkxj|hzozmtmvoztgdbcodibtw-czkxj",
+    "nvhkgzvbvn|hzozmtmvoztgdbcodibtw-czkxj",
+    "nvhkgzvbvn|hzozmtmvoztgdbcodibtwtb-czkxj"
+  ],
+  "heater_type": 1,
+  "water_heater_type": 1,
+  "number_of_family": 3,
+  "monthly_type": 1,
+  "monthly_values": [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+    "1000",
+    "1100",
+    "1200"
+  ],
+  "latest_year_month": "202010",
+  "load_curve": [
+    1.6,
+    1.4,
+    1.2,
+    1,
+    0.8,
+    0.6,
+    0.4,
+    0.6,
+    0.8,
+    1,
+    1.2,
+    1.4
+  ]
+}

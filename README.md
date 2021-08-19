@@ -1,5 +1,5 @@
 # EMAP API README
-## Plan API
+## Plan API（電気）
 - Plan APIでは、4つのエンドポイントを提供します。
   - /elec/areas : 電力のエリアを取得できます。
   - /elec/providers : 電気事業者一覧を取得できます。
@@ -22,7 +22,7 @@ cat emap_plans.json | jq
  - EMAP APIについては以下をご覧ください。
    - [https://enechange.co.jp/emap-plan-lp/](https://enechange.co.jp/emap-plan-lp/)
 
-## Simulation API
+## Simulation API（電気）
 - APIの仕様の詳細については[こちら](https://emap-sim-base.enechange.jp/apidocs/simulation)をご覧ください。
 - POSTするJSON例
   - fee_plan_codeは電気料金プランを一意に識別するコードになります。Simulation APIのみをご契約の場合は、診断対象としたいfee_plan_codeをお伝えいたします。Plan APIから取得することもできます。
@@ -37,6 +37,24 @@ curl -X POST -H "Content-Type: application/json" -H "X-EMAP-USER-KEY:emapapidemo
 wget -q -O emap_simulation.json https://emap-sim-base.enechange.jp/v001/elec/simulate --post-file req-sample-gas-tepco.json --header='X-EMAP-USER-KEY:emapapidemouser1234' --header 'Content-Type: application/json' --header 'Accept: application/json'
 
 cat emap_simulation.json | jq
+```
+
+## [WIP] Simulation API（ガス）
+- APIの仕様の詳細については[こちら](https://emap-sim-base.enechange.jp/apidocs/gas-simulation)をご覧ください。
+- [WIP] POSTするJSON例
+  - request_idはリクエストを一意に特定するためのIDです。リクエストとレスポンスを紐付ける場合などに用います。
+  - current_plan_codeおよびtarget_plan_codesはガス料金プランを一意に識別するコードになります。ガスのSimulation APIのみをご契約の場合は、診断対象としたいコードをお伝えいたします。Plan APIから取得することもできる予定です。
+  - リクエストのJSONの例をsample_requests/req-gas-simulation-api-sample.jsonに示します。この例ではcurrent_plan_codeが"czkxj|hzozmtmvoztgdbcodibtw-czkxj"であるプランが比較元プランとなります。
+
+```sh
+# [WIP] curlの場合
+curl -X POST -H "Content-Type: application/json" -H "X-EMAP-USER-KEY:emapapidemouser1234" -d @req-gas-simulation-api-sample.json https://emap-sim-base.enechange.jp/v001/gas/simulate > emap_gas_simulation.json
+curl -X POST -H "Content-Type: application/json" -H "X-EMAP-USER-KEY:emapapidemouser1234" -d '{"request_id": "H14640da","postcode": "1000001","current_plan_code": "czkxj|hzozmtmvoztgdbcodibtw-czkxj","target_plan_codes": ["czkxj|hzozmtmvoztgdbcodibtw-czkxj","nvhkgzvbvn|hzozmtmvoztgdbcodibtw-czkxj","nvhkgzvbvn|hzozmtmvoztgdbcodibtwtb-czkxj"],"heater_type": 1,"water_heater_type": 1,"number_of_family": 3,"monthly_type": 1,"monthly_values": ["100","200","300","400","500","600","700","800","900","1000","1100","1200"],"latest_year_month": "202010","load_curve": [1.6,1.4,1.2,1,0.8,0.6,0.4,0.6,0.8,1,1.2,1.4]}' https://emap-sim-base.enechange.jp/v001/gas/simulate > emap_gas_simulation.json
+
+# [WIP] wgetの場合
+wget -q -O emap_gas_simulation.json https://emap-sim-base.enechange.jp/v001/gas/simulate --post-file req-gas-simulation-api-sample.json --header='X-EMAP-USER-KEY:emapapidemouser1234' --header 'Content-Type: application/json' --header 'Accept: application/json'
+
+cat emap_gas_simulation.json | jq
 ```
 
 ## デモ環境について
